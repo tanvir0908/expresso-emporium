@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 export default function AddCoffee() {
   const handleAddCoffee = (e) => {
     e.preventDefault();
@@ -12,6 +14,22 @@ export default function AddCoffee() {
     const photo = form.photo.value;
     const newCoffee = { name, chef, supplier, taste, category, details, photo };
     console.log(newCoffee);
+
+    //send data to the server
+    fetch("http://localhost:5000/coffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire("Success", "New Coffee Added Successfully", "success");
+        }
+      });
   };
 
   return (
@@ -28,6 +46,7 @@ export default function AddCoffee() {
           <div className="flex flex-col w-full">
             <span className="font-medium mb-1">Name</span>
             <input
+              required
               className="px-3 py-2 rounded text-xl"
               type="text"
               name="name"
@@ -68,6 +87,7 @@ export default function AddCoffee() {
           <div className="flex flex-col w-full">
             <span className="font-medium mb-1">Category</span>
             <input
+              required
               className="px-3 py-2 rounded text-xl"
               type="text"
               name="category"
@@ -77,6 +97,7 @@ export default function AddCoffee() {
           <div className="flex flex-col w-full">
             <span className="font-medium mb-1">Details</span>
             <input
+              required
               className="px-3 py-2 rounded text-xl"
               type="text"
               name="details"
@@ -87,6 +108,7 @@ export default function AddCoffee() {
         <div className="flex-col flex mx-auto w-2/3 my-5">
           <span className="font-medium mb-1">Photo</span>
           <input
+            required
             className="px-3 py-2 rounded text-xl"
             type="text"
             name="photo"
