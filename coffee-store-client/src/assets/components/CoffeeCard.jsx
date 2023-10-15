@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-export default function CoffeeCard({ coffee }) {
+export default function CoffeeCard({ coffee, coffees, setCoffees }) {
   const handleDelete = (id) => {
     console.log(id);
 
@@ -24,6 +25,8 @@ export default function CoffeeCard({ coffee }) {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
+              const remaining = coffees.filter((coffee) => coffee._id != id);
+              setCoffees(remaining);
             }
           });
       }
@@ -42,7 +45,10 @@ export default function CoffeeCard({ coffee }) {
       </div>
       <div className="btn-group btn-group-vertical">
         <button className="btn">Details</button>
-        <button className="btn">Edit</button>
+        <Link to={`/updateCoffee/${_id}`}>
+          <button className="btn">Edit</button>
+        </Link>
+
         <button className="btn bg-red-500" onClick={() => handleDelete(_id)}>
           Delete
         </button>
