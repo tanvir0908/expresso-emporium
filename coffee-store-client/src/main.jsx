@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./assets/components/Root";
-import AddCoffee from "./assets/components/AddCoffee";
-import UpdateCoffee from "./assets/components/UpdateCoffee";
-import Home from "./assets/components/Home";
+import Root from "./components/Root";
+import AddCoffee from "./components/AddCoffee";
+import UpdateCoffee from "./components/UpdateCoffee";
+import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
