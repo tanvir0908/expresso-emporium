@@ -25,7 +25,7 @@ export default function Footer() {
     <div>
       <div
         style={backgroundUpper}
-        className="px-64 py-20 grid grid-cols-2 gap-20"
+        className="px-52 py-20 grid grid-cols-2 gap-32"
       >
         <div>
           <img className="w-24" src={logo} alt="" />
@@ -202,19 +202,19 @@ export default function Footer() {
           </h2>
           <form onSubmit={handleTouchForm}>
             <input
-              className="px-3 text-lg py-2 w-3/4 rounded"
+              className="px-3 text-lg py-2 w-full rounded"
               type="text"
               placeholder="Name"
             />
             <br />
             <input
-              className="px-3 text-lg py-2 my-5 w-3/4 rounded"
+              className="px-3 text-lg py-2 my-5 w-full rounded"
               type="email"
               placeholder="Email"
             />
             <br />
             <textarea
-              className="px-3 text-lg py-2 w-3/4 rounded"
+              className="px-3 text-lg py-2 w-full rounded"
               name=""
               id=""
               cols="30"

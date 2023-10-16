@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import CoffeeCard from "./CoffeeCard";
 import { useState } from "react";
 import Banner from "./Banner";
+import Feature from "./Feature";
+import FollowUs from "./FollowUs";
 
 export default function Home() {
   const loadedCoffees = useLoaderData();
@@ -10,6 +12,7 @@ export default function Home() {
   return (
     <div>
       <Banner />
+      <Feature />
       <div className="grid grid-cols-2 gap-10">
         {coffees.map((coffee) => (
           <CoffeeCard
@@ -20,6 +23,7 @@ export default function Home() {
           />
         ))}
       </div>
+      <FollowUs/>
     </div>
   );
 }

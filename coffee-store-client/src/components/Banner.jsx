@@ -18,7 +18,7 @@ export default function Banner() {
           nostalgia back!! Your companion <br /> of every moment!!! Enjoy the
           beautiful moments and make them memorable.
         </p>
-        <button className="font-ran text-black rounded text-3xl px-5 py-2 bg-[#E3B577] hover:bg-transparent border-white hover:border-2 hover:text-white">
+        <button className="font-ran text-black border-2 border-[#E3B577] rounded text-3xl px-5 py-2 bg-[#E3B577] hover:bg-transparent hover:border-white hover:border-2 hover:text-white">
           Learn More
         </button>
       </div>
